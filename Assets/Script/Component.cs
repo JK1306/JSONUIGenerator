@@ -5,67 +5,26 @@ using System.Security;
 using UnityEngine;
 
 [Serializable]
-public class Component
+public class Object_
 {
-    public Vector3 objecttPosition;
+    public string gameObjectName;
+    public GameObject goObject;
+    public Vector3 objectMinOffset,
+                    objectMaxOffset;
     public Vector3 objectScale;
     public Vector3 objectRotation;
-}
+    public List<BaseComponent> attachedComponent;
+    public List<Object_> childComponents;
 
-[Serializable]
-public class Image : Component
-{
-    public Color imageColor;
-    public Sprite sourceImage;
-}
+    public Object_(GameObject gameObject){
+        gameObjectName = gameObject.name;
+        goObject = gameObject;
+        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+        
+        objectMinOffset = rectTransform.offsetMin;
+        objectMaxOffset = rectTransform.offsetMax;
 
-[Serializable]
-public class Button : Image
-{
-    public bool interactable;
-}
-
-[Serializable]
-public class Text : Component
-{
-    public enum FontAllignment{
-        UpperLeft,
-        UpperCenter,
-        UpperRight,
-        MiddleLeft,
-        MiddleCenter,
-        MiddleRight,
-        LowerLeft,
-        LowerCenter,
-        LowerRight
+        objectScale = rectTransform.localScale;
+        // objectRotation = rectTransform.localRotation;
     }
-
-    public string textString;
-    public int fontSize;
-    public FontAllignment fontAllignment;
-}
-
-[Serializable]
-public class DropDown : Image
-{
-    public List<string> optionList;
-}
-
-[Serializable]
-public class InputField : Image
-{
-    public enum InputFieldType{
-        Standard,
-        Autocorrected,
-        IntegerNumber,
-        DecimalNumber,
-        Alphanumeric,
-        Name,
-        EmailAddress,
-        Password,
-        Pin,
-        Custom
-    }
-    public string inputText;
-    public InputFieldType fieldType;
 }
