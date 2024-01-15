@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.RegularExpressions;
 using AttachmentComponent;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +13,7 @@ public class EditorScript : MonoBehaviour
     [TextArea(20, 20)]
     public string jsonString;
     public List<Object_> templateObjects;
+    string FILE_PATH = "UI_JSON.json";
 
     public void LoadJSONData(){
         Debug.Log("Came here....");
@@ -28,13 +31,22 @@ public class EditorScript : MonoBehaviour
 
         templateObjects = GetAllObjects(gameObject);
 
+        List<string> objectInfos = new List<string>();
+
         foreach (var templateObject in templateObjects)
         {
-            Debug.Log($"Object Name : {templateObject.goObject.name}", templateObject.goObject);
+            // Debug.Log($"Object Name : {templateObject.goObject.name}", templateObject.goObject);
             string objectInfo = templateObject.GetObjectInfo();
-            Debug.Log(objectInfo);
+            // Debug.Log(objectInfo);
+            objectInfos.Add(objectInfo);
         }
-        // Debug.Log($"templateObjects count : {templateObjects.Count}");
+
+        string jsonResponse = $"[{String.Join(',', objectInfos.ToArray())}]";
+
+        using(StreamWriter writer = new StreamWriter(FILE_PATH)){
+            writer.WriteLine(jsonResponse);
+        }
+        Debug.Log($"File Store in : {Regex.Replace(Application.dataPath, @"/Assets$", "")}/{FILE_PATH}");
     }
 
     private List<Object_> GetAllObjects(GameObject parentObject)
