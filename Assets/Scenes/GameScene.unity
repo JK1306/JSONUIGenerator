@@ -133,9 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 225814729}
   - component: {fileID: 225814728}
+  - component: {fileID: 225814730}
   - component: {fileID: 225814727}
   - component: {fileID: 225814726}
-  - component: {fileID: 225814730}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -239,7 +239,122 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonString: 
-  templateObjects: []
+  templateObjects:
+  - gameObjectName: ButtonComp
+    goObject: {fileID: 1630001705}
+    objectMinOffset: {x: -160, y: -30, z: 0}
+    objectMaxOffset: {x: 0, y: 0, z: 0}
+    objectScale: {x: 1, y: 1, z: 1}
+    objectRotation: {x: 0, y: 0, z: 0}
+    attachedComponents:
+    - rid: 5611892312082743296
+    - rid: 5611892312082743297
+    - rid: 5611892312082743298
+    - rid: 5611892312082743299
+    childObjects:
+    - gameObjectName: Text (Legacy)
+      goObject: {fileID: 1464942127}
+      objectMinOffset: {x: 0, y: 0, z: 0}
+      objectMaxOffset: {x: 0, y: 0, z: 0}
+      objectScale: {x: 1, y: 1, z: 1}
+      objectRotation: {x: 0, y: 0, z: 0}
+      attachedComponents:
+      - rid: 5611892312082743300
+      - rid: 5611892312082743301
+      - rid: 5611892312082743302
+      childObjects: []
+  - gameObjectName: Text (Legacy)
+    goObject: {fileID: 1204900665}
+    objectMinOffset: {x: -80, y: -15, z: 0}
+    objectMaxOffset: {x: 80, y: 15, z: 0}
+    objectScale: {x: 1, y: 1, z: 1}
+    objectRotation: {x: 0, y: 0, z: 0}
+    attachedComponents:
+    - rid: 5611892312082743303
+    - rid: 5611892312082743304
+    - rid: 5611892312082743305
+    childObjects: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5611892312082743296
+      type: {class: UIButton, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 2
+        interactable: 1
+    - rid: 5611892312082743297
+      type: {class: UIButton, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 2
+        interactable: 1
+    - rid: 5611892312082743298
+      type: {class: UIButton, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 2
+        interactable: 1
+    - rid: 5611892312082743299
+      type: {class: UIButton, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 2
+        interactable: 1
+    - rid: 5611892312082743300
+      type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 1
+        textString: Button
+        fontSize: 14
+        fontAllignmentIndex: 4
+        fontAllignment: 4
+    - rid: 5611892312082743301
+      type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 1
+        textString: Button
+        fontSize: 14
+        fontAllignmentIndex: 4
+        fontAllignment: 4
+    - rid: 5611892312082743302
+      type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 1
+        textString: Button
+        fontSize: 14
+        fontAllignmentIndex: 4
+        fontAllignment: 4
+    - rid: 5611892312082743303
+      type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 1
+        textString: New Text
+        fontSize: 14
+        fontAllignmentIndex: 0
+        fontAllignment: 0
+    - rid: 5611892312082743304
+      type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 1
+        textString: New Text
+        fontSize: 14
+        fontAllignmentIndex: 0
+        fontAllignment: 0
+    - rid: 5611892312082743305
+      type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 1
+        textString: New Text
+        fontSize: 14
+        fontAllignmentIndex: 0
+        fontAllignment: 0
 --- !u!1 &508564181
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,7 +805,7 @@ GameObject:
   - component: {fileID: 1630001708}
   - component: {fileID: 1630001707}
   m_Layer: 5
-  m_Name: ButtonComp
+  m_Name: ButtonComp11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

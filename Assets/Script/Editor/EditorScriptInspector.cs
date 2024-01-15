@@ -23,6 +23,8 @@ public class EditorScriptInspector : Editor {
         base.OnInspectorGUI();
         editoScriptSerializedObject?.ApplyModifiedProperties();
 
+        if(editoScriptSerializedObject == null) return;
+
         object editorScriptObject = editoScriptSerializedObject.targetObject;
 
         EditorGUILayout.Space();

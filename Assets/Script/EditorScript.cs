@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using AttachmentComponent;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Canvas))]
 public class EditorScript : MonoBehaviour
@@ -20,36 +22,68 @@ public class EditorScript : MonoBehaviour
         }
     }
 
-    public void ExportUItoJSON(){
-        int totalChildCount = gameObject.transform.childCount;
+    public void ExportUItoJSON()
+    {
+        templateObjects.Clear();
+
+        templateObjects = GetAllObjects(gameObject);
+
+        foreach (var templateObject in templateObjects)
+        {
+            Debug.Log($"Object Name : {templateObject.goObject.name}", templateObject.goObject);
+            string objectInfo = templateObject.GetObjectInfo();
+            Debug.Log(objectInfo);
+        }
+        // Debug.Log($"templateObjects count : {templateObjects.Count}");
+    }
+
+    private List<Object_> GetAllObjects(GameObject parentObject)
+    {
+        int totalChildCount = parentObject.transform.childCount;
+
+        List<Object_> tempObject = new List<Object_>();
+
+        // Debug.Log($"Parent Object : {parentObject.name}", parentObject);
 
         for (int i = 0; i < totalChildCount; i++)
         {
-            Debug.Log($"Name : {gameObject.transform.GetChild(i).name}");
-            
-            Object_ currentObject = new Object_(gameObject.transform.GetChild(i).gameObject);
+            GameObject currentGameObject = parentObject.transform.GetChild(i).gameObject;
+
+            // Debug.Log(currentGameObject.name, currentGameObject);
+
+            Object_ currentObject = new Object_(currentGameObject);
 
             GetAllComponentsAttached(currentObject);
+
+            currentObject.childObjects = GetAllObjects(currentGameObject);
+
+            tempObject.Add(currentObject);
         }
+
+        // Debug.Log($"Parent Object : {parentObject.name} - Count {tempObject.Count}", parentObject);
+
+        return tempObject;
     }
 
     public void GetAllComponentsAttached(Object_ go){
         Component[] allComponent = go.goObject.GetComponents<Component>();
 
-        Debug.Log($"Game Object {go.gameObjectName}");
-
         foreach (var item in allComponent)
         {
-            GetComponent(item);
+            BaseComponent baseComponent = GetComponent(item, go);
+            if(baseComponent != null)
+                go.attachedComponents.Add(baseComponent);
         }
     }
 
-    public BaseComponent GetComponent(Component component){
+    public BaseComponent GetComponent(Component component, Object_ componentObject){
 
-        Debug.Log(component.name);
-
-        if(component.name.ToLower().Contains("button")){
-            // return new Button(component.enabled);
+        if(component as Button){
+            return new UIButton(componentObject.goObject.GetComponent<Button>());
+        }else if(component as Image){
+            return new UIImage(componentObject.goObject.GetComponent<Image>());
+        }else if(component as Text){
+            return new UIText(componentObject.goObject.GetComponent<Text>());
         }
 
         return null;
