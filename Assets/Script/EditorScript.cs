@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using AttachmentComponent;
+using SimpleJSON;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,21 +13,19 @@ public class EditorScript : MonoBehaviour
 {
     [TextArea(20, 20)]
     public string jsonString;
-    public List<Object_> templateObjects;
+    [HideInInspector] public List<Object_> templateObjects;
     string FILE_PATH = "UI_JSON.json";
 
     public void LoadJSONData(){
-        Debug.Log("Came here....");
 
         if(jsonString == ""){
             Debug.Log("String null.");
         }else{
-            Debug.Log(jsonString);
+            LoadJSON(jsonString);
         }
     }
 
-    public void ExportUItoJSON()
-    {
+    public void ExportUItoJSON(){
         templateObjects.Clear();
 
         templateObjects = GetAllObjects(gameObject);
@@ -101,7 +100,43 @@ public class EditorScript : MonoBehaviour
         return null;
     }
 
-    // public Object_ GetGameObject(GameObject go){
-    //     return new Object_(go.name);
-    // }
+    void LoadJSON(string jsonString){
+        JSONNode jsonNode = JSON.Parse(jsonString);
+        for (int i = 0; i < jsonNode.Count; i++)
+        {
+            CreateUI(jsonNode[i]);
+        }
+    }
+
+    void CreateUI(JSONNode jsonNode){
+        GameObject emptyGO = new GameObject(jsonNode["name"]);
+        emptyGO.AddComponent<RectTransform>();
+        RectTransform rect = emptyGO.GetComponent<RectTransform>();
+        rect.anchorMin = new Vector3(
+                jsonNode["position"]["anchorMin"]["x"],
+                jsonNode["position"]["anchorMin"]["y"],
+                jsonNode["position"]["anchorMin"]["z"]
+        );
+        rect.anchorMax = new Vector3(
+                jsonNode["position"]["anchorMax"]["x"],
+                jsonNode["position"]["anchorMax"]["y"],
+                jsonNode["position"]["anchorMax"]["z"]
+        );
+        rect.localPosition = new Vector3(
+                jsonNode["position"]["localPosition"]["x"],
+                jsonNode["position"]["localPosition"]["y"],
+                jsonNode["position"]["localPosition"]["z"]
+        );
+        rect.offsetMin = new Vector3(
+                jsonNode["position"]["minOffset"]["x"],
+                jsonNode["position"]["minOffset"]["y"],
+                jsonNode["position"]["minOffset"]["z"]
+        );
+        rect.offsetMax = new Vector3(
+                jsonNode["position"]["maxOffset"]["x"],
+                jsonNode["position"]["maxOffset"]["y"],
+                jsonNode["position"]["maxOffset"]["z"]
+        );
+        emptyGO.transform.SetParent(transform);
+    }
 }

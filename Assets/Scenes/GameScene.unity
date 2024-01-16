@@ -123,6 +123,42 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &157043832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157043833}
+  m_Layer: 0
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &157043833
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157043832}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 470622364}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -369, y: -207.5}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &225814725
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,68 +276,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonString: 
   templateObjects:
-  - gameObjectName: ButtonComp
+  - gameObjectName: ButtonComp11
     goObject: {fileID: 1630001705}
+    localPosition: {x: 289, y: 192.5, z: 0}
     objectMinOffset: {x: -160, y: -30, z: 0}
     objectMaxOffset: {x: 0, y: 0, z: 0}
+    objectAnchoredPositionMin: {x: 1, y: 1, z: 0}
+    objectAnchoredPositionMax: {x: 1, y: 1, z: 0}
     objectScale: {x: 1, y: 1, z: 1}
     objectRotation: {x: 0, y: 0, z: 0}
     attachedComponents:
-    - rid: 5611892312082743296
-    - rid: 5611892312082743297
-    - rid: 5611892312082743298
-    - rid: 5611892312082743299
+    - rid: 5611892315555102724
+    - rid: 5611892315555102725
     childObjects:
     - gameObjectName: Text (Legacy)
       goObject: {fileID: 1464942127}
+      localPosition: {x: 0, y: 0, z: 0}
       objectMinOffset: {x: 0, y: 0, z: 0}
       objectMaxOffset: {x: 0, y: 0, z: 0}
+      objectAnchoredPositionMin: {x: 0, y: 0, z: 0}
+      objectAnchoredPositionMax: {x: 1, y: 1, z: 0}
       objectScale: {x: 1, y: 1, z: 1}
       objectRotation: {x: 0, y: 0, z: 0}
       attachedComponents:
-      - rid: 5611892312082743300
-      - rid: 5611892312082743301
-      - rid: 5611892312082743302
+      - rid: 5611892315555102726
       childObjects: []
   - gameObjectName: Text (Legacy)
     goObject: {fileID: 1204900665}
+    localPosition: {x: 0, y: 0, z: 0}
     objectMinOffset: {x: -80, y: -15, z: 0}
     objectMaxOffset: {x: 80, y: 15, z: 0}
+    objectAnchoredPositionMin: {x: 0.5, y: 0.5, z: 0}
+    objectAnchoredPositionMax: {x: 0.5, y: 0.5, z: 0}
     objectScale: {x: 1, y: 1, z: 1}
     objectRotation: {x: 0, y: 0, z: 0}
     attachedComponents:
-    - rid: 5611892312082743303
-    - rid: 5611892312082743304
-    - rid: 5611892312082743305
+    - rid: 5611892315555102727
     childObjects: []
   references:
     version: 2
     RefIds:
-    - rid: 5611892312082743296
+    - rid: 5611892315555102724
+      type: {class: UIImage, ns: AttachmentComponent, asm: Assembly-CSharp}
+      data:
+        isEnabled: 0
+        componentType: 0
+        imageColor: {r: 1, g: 1, b: 1, a: 1}
+        sourceImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    - rid: 5611892315555102725
       type: {class: UIButton, ns: AttachmentComponent, asm: Assembly-CSharp}
       data:
         isEnabled: 0
         componentType: 2
         interactable: 1
-    - rid: 5611892312082743297
-      type: {class: UIButton, ns: AttachmentComponent, asm: Assembly-CSharp}
-      data:
-        isEnabled: 0
-        componentType: 2
-        interactable: 1
-    - rid: 5611892312082743298
-      type: {class: UIButton, ns: AttachmentComponent, asm: Assembly-CSharp}
-      data:
-        isEnabled: 0
-        componentType: 2
-        interactable: 1
-    - rid: 5611892312082743299
-      type: {class: UIButton, ns: AttachmentComponent, asm: Assembly-CSharp}
-      data:
-        isEnabled: 0
-        componentType: 2
-        interactable: 1
-    - rid: 5611892312082743300
+    - rid: 5611892315555102726
       type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
       data:
         isEnabled: 0
@@ -310,25 +338,7 @@ MonoBehaviour:
         fontSize: 14
         fontAllignmentIndex: 4
         fontAllignment: 4
-    - rid: 5611892312082743301
-      type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
-      data:
-        isEnabled: 0
-        componentType: 1
-        textString: Button
-        fontSize: 14
-        fontAllignmentIndex: 4
-        fontAllignment: 4
-    - rid: 5611892312082743302
-      type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
-      data:
-        isEnabled: 0
-        componentType: 1
-        textString: Button
-        fontSize: 14
-        fontAllignmentIndex: 4
-        fontAllignment: 4
-    - rid: 5611892312082743303
+    - rid: 5611892315555102727
       type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
       data:
         isEnabled: 0
@@ -337,24 +347,211 @@ MonoBehaviour:
         fontSize: 14
         fontAllignmentIndex: 0
         fontAllignment: 0
-    - rid: 5611892312082743304
-      type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
-      data:
-        isEnabled: 0
-        componentType: 1
-        textString: New Text
-        fontSize: 14
-        fontAllignmentIndex: 0
-        fontAllignment: 0
-    - rid: 5611892312082743305
-      type: {class: UIText, ns: AttachmentComponent, asm: Assembly-CSharp}
-      data:
-        isEnabled: 0
-        componentType: 1
-        textString: New Text
-        fontSize: 14
-        fontAllignmentIndex: 0
-        fontAllignment: 0
+--- !u!1 &468982398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 468982399}
+  m_Layer: 0
+  m_Name: ButtonComp11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &468982399
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468982398}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 470622364}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -818, y: -430}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &470622359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 470622364}
+  - component: {fileID: 470622363}
+  - component: {fileID: 470622362}
+  - component: {fileID: 470622361}
+  - component: {fileID: 470622360}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &470622360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470622359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &470622361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470622359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!114 &470622362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470622359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f24c0ffde34264a95e4babb7bdb7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonString: "[\r\n    {\r\n        \"name\": \"ButtonComp11\",\r\n        \"position\":
+    {\r\n            \"localPosition\": {\r\n                \"x\": 289,\r\n               
+    \"y\": 192.5,\r\n                \"z\": 0\r\n            },\r\n            \"minOffset\":
+    {\r\n                \"x\": -160,\r\n                \"y\": -30,\r\n               
+    \"z\": 0\r\n            },\r\n            \"maxOffset\": {\r\n               
+    \"x\": 0,\r\n                \"y\": 0,\r\n                \"z\": 0\r\n           
+    },\r\n            \"anchorMin\": {\r\n                \"x\": 1,\r\n               
+    \"y\": 1,\r\n                \"z\": 0\r\n            },\r\n            \"anchorMax\":
+    {\r\n                \"x\": 1,\r\n                \"y\": 1,\r\n               
+    \"z\": 0\r\n            }\r\n        },\r\n        \"scale\": {\r\n           
+    \"x\": 1,\r\n            \"y\": 1,\r\n            \"z\": 1\r\n        },\r\n       
+    \"attachedComponentInfo\": [\r\n            {\r\n                \"componentType\":
+    \"Image\",\r\n                \"imageColor\": {\r\n                    \"r\":
+    1,\r\n                    \"g\": 1,\r\n                    \"b\": 1,\r\n                   
+    \"a\": 1\r\n                },\r\n                \"spriteImage\": \"UISprite\"\r\n           
+    },\r\n            {\r\n                \"componentType\": \"Button\",\r\n               
+    \"isInteractable\": \"True\"\r\n            }\r\n        ],\r\n        \"childObjects\":
+    [\r\n            {\r\n                \"name\": \"Text (Legacy)\",\r\n               
+    \"position\": {\r\n                    \"localPosition\": {\r\n                       
+    \"x\": 0,\r\n                        \"y\": 0,\r\n                        \"z\":
+    0\r\n                    },\r\n                    \"minOffset\": {\r\n                       
+    \"x\": 0,\r\n                        \"y\": 0,\r\n                        \"z\":
+    0\r\n                    },\r\n                    \"maxOffset\": {\r\n                       
+    \"x\": 0,\r\n                        \"y\": 0,\r\n                        \"z\":
+    0\r\n                    },\r\n                    \"anchorMin\": {\r\n                       
+    \"x\": 0,\r\n                        \"y\": 0,\r\n                        \"z\":
+    0\r\n                    },\r\n                    \"anchorMax\": {\r\n                       
+    \"x\": 1,\r\n                        \"y\": 1,\r\n                        \"z\":
+    0\r\n                    }\r\n                },\r\n                \"scale\":
+    {\r\n                    \"x\": 1,\r\n                    \"y\": 1,\r\n                   
+    \"z\": 1\r\n                },\r\n                \"attachedComponentInfo\":
+    [\r\n                    {\r\n                        \"componentType\": \"Text\",\r\n                       
+    \"textString\": \"Button\",\r\n                        \"fontSize\": 14,\r\n                       
+    \"fontAllignmentIndex\": \"4\"\r\n                    }\r\n                ],\r\n               
+    \"childObjects\": []\r\n            }\r\n        ]\r\n    },\r\n    {\r\n       
+    \"name\": \"Text (Legacy)\",\r\n        \"position\": {\r\n            \"localPosition\":
+    {\r\n                \"x\": 0,\r\n                \"y\": 0,\r\n               
+    \"z\": 0\r\n            },\r\n            \"minOffset\": {\r\n               
+    \"x\": -80,\r\n                \"y\": -15,\r\n                \"z\": 0\r\n           
+    },\r\n            \"maxOffset\": {\r\n                \"x\": 80,\r\n               
+    \"y\": 15,\r\n                \"z\": 0\r\n            },\r\n            \"anchorMin\":
+    {\r\n                \"x\": 0.5,\r\n                \"y\": 0.5,\r\n               
+    \"z\": 0\r\n            },\r\n            \"anchorMax\": {\r\n               
+    \"x\": 0.5,\r\n                \"y\": 0.5,\r\n                \"z\": 0\r\n           
+    }\r\n        },\r\n        \"scale\": {\r\n            \"x\": 1,\r\n           
+    \"y\": 1,\r\n            \"z\": 1\r\n        },\r\n        \"attachedComponentInfo\":
+    [\r\n            {\r\n                \"componentType\": \"Text\",\r\n               
+    \"textString\": \"New Text\",\r\n                \"fontSize\": 14,\r\n               
+    \"fontAllignmentIndex\": \"0\"\r\n            }\r\n        ],\r\n        \"childObjects\":
+    []\r\n    }\r\n]"
+  templateObjects: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!223 &470622363
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470622359}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &470622364
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470622359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 468982399}
+  - {fileID: 157043833}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &508564181
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,8 +10,11 @@ public class Object_
 {
     public string gameObjectName;
     public GameObject goObject;
-    public Vector3 objectMinOffset,
-                    objectMaxOffset;
+    public Vector3 localPosition,
+                    objectMinOffset,
+                    objectMaxOffset,
+                    objectAnchoredPositionMin,
+                    objectAnchoredPositionMax;
     public Vector3 objectScale;
     public Vector3 objectRotation;
     [SerializeReference] public List<BaseComponent> attachedComponents;
@@ -25,15 +28,18 @@ public class Object_
         goObject = gameObject;
         RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
         
+        localPosition = rectTransform.localPosition;
         objectMinOffset = rectTransform.offsetMin;
         objectMaxOffset = rectTransform.offsetMax;
-
+        objectAnchoredPositionMin = rectTransform.anchorMin;
+        objectAnchoredPositionMax = rectTransform.anchorMax;
+        
         objectScale = rectTransform.localScale;
         // objectRotation = rectTransform.localRotation;
     }
 
     public string GetObjectInfo(){
-        return $"{{\"name\":\"{gameObjectName}\", \"position\":{{\"minOffset\":{{\"x\":{objectMinOffset.x},\"y\":{objectMinOffset.y},\"z\":{objectMinOffset.z}}}, \"maxOffset\":{{\"x\":{objectMaxOffset.x},\"y\":{objectMaxOffset.y},\"z\":{objectMaxOffset.z}}}}}, \"scale\":{{\"x\":{objectScale.x},\"y\":{objectScale.y},\"z\":{objectScale.z}}}, \"attachedComponentInfo\":{GetAttachedComponentInfo()}, \"childObjects\":{GetChildInfo()}}}";
+        return $"{{\"name\":\"{gameObjectName}\", \"position\":{{\"localPosition\":{{\"x\":{localPosition.x},\"y\":{localPosition.y},\"z\":{localPosition.z}}}, \"minOffset\":{{\"x\":{objectMinOffset.x},\"y\":{objectMinOffset.y},\"z\":{objectMinOffset.z}}}, \"maxOffset\":{{\"x\":{objectMaxOffset.x},\"y\":{objectMaxOffset.y},\"z\":{objectMaxOffset.z}}}, \"anchorMin\":{{\"x\":{objectAnchoredPositionMin.x},\"y\":{objectAnchoredPositionMin.y},\"z\":{objectAnchoredPositionMin.z}}}, \"anchorMax\":{{\"x\":{objectAnchoredPositionMax.x},\"y\":{objectAnchoredPositionMax.y},\"z\":{objectAnchoredPositionMax.z}}}}}, \"scale\":{{\"x\":{objectScale.x},\"y\":{objectScale.y},\"z\":{objectScale.z}}}, \"attachedComponentInfo\":{GetAttachedComponentInfo()}, \"childObjects\":{GetChildInfo()}}}";
     }
 
     string GetChildInfo(){
@@ -59,7 +65,7 @@ public class Object_
 
         for (int i = 0; i < componentLength; i++)
         {
-            Debug.Log(attachedComponents[i].componentType);
+            // Debug.Log(attachedComponents[i].componentType);
             if(i < (componentLength-1)){
                 componentInfo += $"{attachedComponents[i].GetComponentInfo()}, ";
             }else{
