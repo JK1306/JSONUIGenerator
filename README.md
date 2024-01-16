@@ -15,3 +15,6 @@
 
 ## Prerequisite : 
 - Unity 2021.3.11f1.
+
+## Used Plugin :
+- SimpleJSON for parsing string to JSONNode.
